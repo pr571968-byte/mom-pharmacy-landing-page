@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About us - MOM Pharmacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --pink:#FA5899; --teal:#00A79B; }
+    *{box-sizing:border-box} html,body{margin:0;padding:0;font-family:Inter,system-ui,sans-serif;color:#111}
+    .wrap{max-width:1000px;margin:32px auto;padding:0 16px}
+    h1{font:700 32px/1.25 Inter,sans-serif;color:var(--pink);margin:0 0 12px}
+    h2{font:700 22px/1.3 Inter,sans-serif;color:var(--pink);margin:20px 0 8px}
+    p,li{font:400 16px/1.7 Inter,sans-serif;color:#333}
+    .hero{border:1px solid #f3c; border-color:#ffd3e5; background:linear-gradient(180deg,#fff,#ffe8f2); border-radius:12px; padding:16px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{border:1px solid #eee;border-radius:12px;padding:12px}
+    .badge{display:inline-block;background:var(--teal);color:#fff;border-radius:999px;padding:2px 10px;font:600 12px/1.6 Inter}
+    /* Language widget */
+    .langFab{position:fixed;right:16px;top:12px;z-index:9999}
+    .langBtn{height:36px;padding:0 12px;border-radius:9999px;border:1px solid #ddd;background:#fff;cursor:pointer;font:600 14px/1.4 Inter}
+    .langPanel{display:none;position:absolute;right:0;top:42px;background:#fff;border:1px solid #eee;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.12);padding:8px}
+    .langPanel.open{display:block}
+  </style>
+</head>
+<body>
+  <div class="langFab">
+    <button class="langBtn" id="langBtn">Languages</button>
+    <div class="langPanel" id="langPanel"><div id="google_translate_element"></div></div>
+  </div>
+  <div class="wrap">
+    <div class="hero">
+      <h1>About MOM Pharmacy</h1>
+      <p class="lead">Medicine & more in minutes with mom-like care. Hyperlocal delivery, verified pharmacists, and emergency assistance.</p>
+      <span class="badge">24x7 support</span>
+    </div>
+
+    <h2>Our mission</h2>
+    <p>We’re on a mission to make healthcare access fast, warm, and trustworthy. From urgent needs to daily wellness, MOM Pharmacy brings a caring experience to your doorstep.</p>
+
+    <h2>How we work</h2>
+    <div class="grid">
+      <div class="card"><strong>1. Search</strong><p>Find your medicines by name or upload a prescription.</p></div>
+      <div class="card"><strong>2. Confirm</strong><p>Licensed pharmacists validate and confirm availability.</p></div>
+      <div class="card"><strong>3. Receive</strong><p>Real-time tracking and delivery in minutes by our heal porters.</p></div>
+    </div>
+
+    <h2>Why patients trust us</h2>
+    <ul>
+      <li>Licensed pharmacies and verified batches</li>
+      <li>Fast delivery with live tracking</li>
+      <li>Care-focused support if you need help choosing</li>
+    </ul>
+  </div>
+  <script>
+    window.googleTranslateElementInit = function(){
+      new google.translate.TranslateElement({pageLanguage:'en'}, 'google_translate_element');
+    };
+    (function(){var s=document.createElement('script');s.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';document.body.appendChild(s);}());
+    document.addEventListener('click', function(e){
+      const b=e.target.closest('#langBtn'); const p=document.getElementById('langPanel');
+      if(b){ e.preventDefault(); p&&p.classList.toggle('open'); return; }
+      if(!e.target.closest('#langPanel')){ p&&p.classList.remove('open'); }
+    });
+  </script>
+</body>
+</html>
+
+

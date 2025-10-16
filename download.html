@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download MOM Pharmacy App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --pink:#FA5899; --bg:#fff; }
+    *{box-sizing:border-box} html,body{margin:0;padding:0;font-family:Inter,system-ui,sans-serif;color:#111;background:var(--bg)}
+    .wrap{max-width:960px;margin:40px auto;padding:0 16px}
+    h1{font:700 32px/1.25 Inter,sans-serif;color:var(--pink);margin:0 0 12px;text-align:center}
+    p.lead{font:400 16px/1.6 Inter,sans-serif;color:#444;text-align:center;margin:0 0 24px}
+    .stage{position:relative;height:360px;border-radius:16px;border:1px solid #eee;background:linear-gradient(180deg,#fff, #ffe8f2)}
+    .phone{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-3deg);width:220px;height:440px;border-radius:32px;background:#000;box-shadow:0 14px 40px rgba(0,0,0,.25);overflow:hidden}
+    .screen{position:absolute;inset:8px;border-radius:24px;background:#fff;display:flex;align-items:center;justify-content:center;font:700 20px/1.2 Inter,sans-serif;color:var(--pink);}
+    .pulse{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:220px;height:220px;border-radius:50%;background:rgba(250,88,153,.15);animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%{transform:translate(-50%,-50%) scale(.9);}50%{transform:translate(-50%,-50%) scale(1.05);}100%{transform:translate(-50%,-50%) scale(.9);}}
+    .actions{display:flex;justify-content:center;gap:12px;margin-top:20px}
+    .btn{height:44px;padding:0 16px;border-radius:10px;border:none;background:var(--pink);color:#fff;font:600 15px/1.4 Inter,sans-serif;cursor:pointer}
+    .store{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 14px;border-radius:10px;border:1px solid #ddd;background:#fff;color:#111;text-decoration:none}
+    .store img{width:22px;height:22px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Get the MOM Pharmacy app</h1>
+    <p class="lead">Fast medicine delivery and emergency support right from your phone.</p>
+    <div class="stage">
+      <div class="pulse"></div>
+      <div class="phone">
+        <div class="screen">MOM Pharmacy</div>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="store" href="https://play.google.com/store/apps/details?id=com.akhila12345.mompharmacyv2" target="_blank" rel="noopener noreferrer">
+        <img alt="Play" src="https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png" />
+        <span>Get it on Google Play</span>
+      </a>
+      <button class="btn" id="downloadApk">Download APK</button>
+    </div>
+  </div>
+  <script>
+    // Optional: simulate direct APK download (placeholder)
+    document.getElementById('downloadApk').addEventListener('click', function(){
+      window.open('https://play.google.com/store/apps/details?id=com.akhila12345.mompharmacyv2','_blank');
+    });
+  </script>
+</body>
+</html>
+
+
+
+

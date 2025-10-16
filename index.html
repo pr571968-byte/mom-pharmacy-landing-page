@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOM Pharmacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Hahmlet:wght@400;500&family=Inter:wght@400;500;600;700&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+    <!-- Top nav strip -->
+    <header class="topbar">
+        <div class="topbar__inner">
+            <img class="topbar__logo-img" src="./assets/footer_bg_left.png" alt="MOM Pharmacy Logo" />
+            <nav class="topbar__nav">
+                <a class="chip chip--outline" href="./index.html"><span data-i18n="nav.welcome">welcome</span></a>
+                <a class="chip chip--ghost" href="./about.html"><span data-i18n="nav.about">about us</span></a>
+                <a class="chip chip--ghost" href="./team.html"><span data-i18n="nav.team">our team</span></a>
+                <a class="chip chip--ghost" href="./careers.html"><span data-i18n="nav.careers">careers</span></a>
+                <a class="chip chip--ghost" href="./investors.html"><span data-i18n="nav.investors">for investors</span></a>
+                <a class="chip chip--ghost" href="./contact.html"><span data-i18n="nav.contact">contact us</span></a>
+            </nav>
+            <div class="lang">
+                <a class="chip chip--outline" href="#langs" id="langToggle"><span>Languages</span></a>
+                <div class="lang__dropdown" id="langDropdown">
+                    <div id="google_translate_element"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section id="welcome" class="section hero">
+        <div class="container">
+            <div class="hero__panel"></div>
+            <h1 class="hero__title" data-i18n="hero.title">We Deliver the Medicine and <br/>We Care the Patient like  Mother.</h1>
+            <div class="hero__ctas">
+                <a class="pill pill--outline" href="./prescription.html"><span data-i18n="hero.orderPrescription">order via prescription</span></a>
+                <a class="pill pill--outline" href="./download.html"><span data-i18n="hero.downloadApp">download our app</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works heading -->
+    <section class="section section--tight">
+        <div class="container">
+            <h2 class="how__heading" data-i18n="how.title">How it works</h2>
+        </div>
+    </section>
+
+    <!-- How it works steps -->
+    <section class="section how">
+        <div class="container">
+            <div class="how__grid">
+                <button type="button" class="how__card how__btn" data-action="search">
+                    <img src="./assets/howitworks_step1.png" alt="Search it" class="how__img" />
+                    <div class="how__label" data-i18n="how.search">Search it</div>
+                </button>
+                <button type="button" class="how__card how__btn" data-action="upload">
+                    <img src="./assets/howitworks_step2.png" alt="Upload here" class="how__img" />
+                    <div class="how__label" data-i18n="how.upload">Upload here</div>
+                </button>
+                <button type="button" class="how__card how__btn" data-action="confirm">
+                    <img src="./assets/howitworks_step3.png" alt="Confirm it" class="how__img" />
+                    <div class="how__label" data-i18n="how.confirm">Cofirm it</div>
+                </button>
+                <button type="button" class="how__card how__btn" data-action="receive">
+                    <img src="./assets/howitworks_step4.png" alt="Receive it" class="how__img" />
+                    <div class="how__label" data-i18n="how.receive">Receive it</div>
+                </button>
+            </div>
+
+            <div class="team">
+                <h3 class="team__title">Talented team</h3>
+                <p class="team__subtitle">real people with a passion for healing here to make your health journey easier</p>
+                <img src="./assets/team_hero.png" alt="Team" class="team__image" />
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ block -->
+    <section class="section faq">
+        <div class="container">
+            <div class="faq__wrap">
+                <div class="faq__header">
+                    <img class="faq__img" src="./assets/faq_hero.png" alt="FAQ" />
+                    <h3 class="faq__heading" data-i18n="faq.title">frequently asked questions?</h3>
+                </div>
+                <div class="faq__items">
+                    <div class="faq__item"><span data-i18n="faq.q1">what is mom pharmacy?</span><button class="faq__toggle" aria-label="expand"></button></div>
+                    <div class="faq__answer">Mom Pharmacy stands for Medicine on Minutes — a fast, reliable, and user‑friendly platform that delivers essential medicines and healthcare products within just 10 minutes.</div>
+                    <div class="faq__item"><span data-i18n="faq.q2">will you really deliver medicines on 10minutes ?</span><button class="faq__toggle" aria-label="expand"></button></div>
+                    <div class="faq__answer">Yes, we aim to deliver within 10 minutes in supported zones with ready stock. Delivery time may vary slightly based on location, traffic, and availability.</div>
+                    <div class="faq__item"><span data-i18n="faq.q3">what if delivery is delayed ?</span><button class="faq__toggle" aria-label="expand"></button></div>
+                    <div class="faq__answer">If delivery is delayed, our support team will notify you with real-time updates. You can also track your order status or contact us directly for assistance.</div>
+                    <div class="faq__item"><span data-i18n="faq.q4">how can we place the order ?</span><button class="faq__toggle" aria-label="expand"></button></div>
+                    <div class="faq__answer">You can place the order through our website or mobile app in just a few clicks. Simply upload your prescription, select your items, and proceed to checkout.</div>
+                    <div class="faq__item"><span data-i18n="faq.q5">what areas do we serve ?</span><button class="faq__toggle" aria-label="expand"></button></div>
+                    <div class="faq__answer">We proudly serve across multiple cities in India, delivering medicines quickly and reliably. Our service areas include urban, suburban, and semi-urban regions for maximum reach.</div>
+                    <div class="faq__item"><span data-i18n="faq.q6">how can you contact us ?</span><button class="faq__toggle" aria-label="expand"></button></div>
+                    <div class="faq__answer">You can contact us via WhatsApp or by filling out the contact form on our website. We are available 24/7 to assist you with queries.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA block -->
+    <section class="section cta">
+        <div class="container cta__container">
+            <div class="cta__media">
+                <img src="./assets/cta_illustration.png" alt="Chat with MOM" />
+            </div>
+            <div class="cta__card">
+                <div class="cta__copy">
+                    <div class="cta__eyebrow">got a question?</div>
+                    <div class="cta__title">mom is just one message away!</div>
+                    <p class="cta__desc">whether it’s a health query or a concern, mom ai chat bot is here to help with clarity and a touch of mom like warmth-just start asking questions.</p>
+                </div>
+                <a href="#ask" class="btn btn--ask">ask mom</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand ribbon -->
+    <section class="section brand">
+        <div class="container brand__container">
+            <div class="brand__wordmark">mom pharmacy</div>
+            <div class="brand__tag">
+                <div class="brand__tag-bg"></div>
+                <div class="brand__tagline">medicine &amp; more on minutes</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results -->
+    <section id="results" class="section results" aria-live="polite" aria-busy="false">
+        <div class="container">
+            <h2 class="results__title" id="resultsTitle" hidden>Search results</h2>
+            <div id="resultsList" class="results__list"></div>
+        </div>
+    </section>
+
+    <!-- Order Panel -->
+    <section id="order" class="section order" hidden>
+        <div class="container order__container">
+            <h2 class="order__title">Selected medicine</h2>
+            <div class="order__row">
+                <div class="order__name" id="orderName"></div>
+                <label class="order__qtylabel" for="orderQty">Qty</label>
+                <input id="orderQty" class="order__qty" type="number" min="1" value="1" />
+                <button id="orderNow" class="order__btn" type="button">Order now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer__gradient"></div>
+        <div class="container footer__inner">
+            <div class="footer__links-row">
+                <a class="footer__chip" href="./index.html"><span>welcome</span></a>
+                <a class="footer__chip" href="./about.html"><span>about us</span></a>
+                <a class="footer__chip" href="./team.html"><span>our team</span></a>
+                <a class="footer__chip" href="./careers.html"><span>careers</span></a>
+                <a class="footer__chip" href="./investors.html"><span>investors</span></a>
+                <a class="footer__chip" href="./contact.html"><span>contact us</span></a>
+            </div>
+
+            <div class="footer__row">
+                <div class="footer__col footer__brandcol">
+                    <img class="footer__logo" src="./assets/footer_bg_left.png" alt="MOM Pharmacy Logo" />
+                    <div class="footer__brandinfo">
+                        <div class="footer__heading">contact info</div>
+                        <div class="footer__item"><img src="./assets/icon_phone.png" alt="phone" /><span>+91 7387719822</span></div>
+                        <div class="footer__item"><img src="./assets/icon_email.png" alt="email" /><span>hr@mompharmacy.com</span></div>
+                    </div>
+                </div>
+
+                <div class="footer__col">
+                    <div class="footer__heading">our location</div>
+                    <div class="footer__item">
+                        <img src="./assets/icon_location.png" alt="location" />
+                        <span>100 Feet Rd, opp. biryani times, vip hills, silicon valley, madhapur, hyderabad, telangana 500081</span>
+                    </div>
+                </div>
+
+                <div class="footer__col footer__spacer"></div>
+
+                <div class="footer__col footer__socials">
+                    <div class="footer__heading footer__heading--small">follow us on</div>
+                    <div class="socials">
+                        <a class="socials__item" href="#" aria-label="Social 1"><img src="./assets/icon_social_1.svg" alt="social 1" /></a>
+                        <a class="socials__item" href="https://www.linkedin.com/company/mompharmacy/" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="./assets/icon_social_2.svg" alt="LinkedIn" /></a>
+                        <a class="socials__item" href="https://www.instagram.com/mompharmacy?igsh=ZTZuZXhlY3BjdHRh" target="_blank" rel="noopener" aria-label="Instagram"><img src="./assets/icon_social_3.svg" alt="Instagram" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footer__legal">
+            <a>terms &amp; conditions</a>
+            <a>privacy policy</a>
+            <a>cookies settings</a>
+        </div>
+    </footer>
+    <input type="file" id="prescriptionUpload" accept="image/*,.pdf" style="display:none" />
+
+    <!-- Search modal -->
+    <div id="searchModal" class="modal" aria-hidden="true" role="dialog" aria-label="Search">
+        <div class="modal__backdrop" data-modal-close></div>
+        <div class="modal__dialog" role="document">
+            <div class="modal__header">
+                <div class="modal__title">Search medicines</div>
+                <button class="modal__close" type="button" aria-label="Close" data-modal-close>×</button>
+            </div>
+            <form id="searchForm" class="modal__body">
+                <input id="searchInput" class="modal__input" type="text" placeholder="Type a medicine name..." required />
+                <button class="modal__submit" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirm Order modal -->
+    <div id="confirmModal" class="modal" aria-hidden="true" role="dialog" aria-label="Confirm order">
+        <div class="modal__backdrop" data-modal-close></div>
+        <div class="modal__dialog" role="document">
+            <div class="modal__header">
+                <div class="modal__title">Confirm your order</div>
+                <button class="modal__close" type="button" aria-label="Close" data-modal-close>×</button>
+            </div>
+            <form id="confirmForm" class="modal__body modal__body--column">
+                <div class="modal__field">
+                    <label class="modal__label" for="confirmItem">Medicine</label>
+                    <input id="confirmItem" class="modal__input" type="text" readonly />
+                </div>
+                <div class="modal__row">
+                    <div class="modal__field">
+                        <label class="modal__label" for="confirmQty">Qty</label>
+                        <input id="confirmQty" class="modal__input" type="number" min="1" value="1" />
+                    </div>
+                    <div class="modal__field">
+                        <label class="modal__label" for="confirmPhone">Mobile number</label>
+                        <input id="confirmPhone" class="modal__input" type="tel" placeholder="e.g. +91 9876543210" required />
+                    </div>
+                </div>
+                <div class="modal__field">
+                    <label class="modal__label" for="confirmAddress">Address</label>
+                    <textarea id="confirmAddress" class="modal__textarea" rows="3" placeholder="House/Flat, Street, Area, City, Pincode" required></textarea>
+                </div>
+                <button class="modal__submit" type="submit">Confirm order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ask MOM chat modal -->
+    <div id="askMomModal" class="modal" aria-hidden="true" role="dialog" aria-label="Ask MOM">
+        <div class="modal__backdrop" data-modal-close></div>
+        <div class="modal__dialog" role="document">
+            <div class="modal__header">
+                <div class="modal__title">Ask MOM</div>
+                <button class="modal__close" type="button" aria-label="Close" data-modal-close>×</button>
+            </div>
+            <div class="chat">
+                <div id="chatMessages" class="chat__messages" aria-live="polite"></div>
+                <form id="chatForm" class="chat__inputrow">
+                    <input id="chatInput" class="chat__input" type="text" placeholder="Type your health question..." required />
+                    <button class="chat__send" type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+      window.googleTranslateElementInit = function() {
+        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+      };
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
+
+

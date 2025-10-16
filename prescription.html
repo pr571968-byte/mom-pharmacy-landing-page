@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order via prescription - MOM Pharmacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --pink:#FA5899; }
+    *{box-sizing:border-box} html,body{margin:0;padding:0;font-family:Inter,system-ui,sans-serif;color:#111}
+    .wrap{max-width:900px;margin:32px auto;padding:0 16px}
+    h1{font:700 28px/1.3 Inter,sans-serif;color:var(--pink);margin:0 0 16px}
+    .card{border:1px solid #eee;border-radius:12px;padding:16px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:flex;flex-direction:column;gap:6px}
+    label{font:600 12px/1.4 Inter,sans-serif;color:#555}
+    input,select,textarea{padding:10px 12px;border:1px solid #ddd;border-radius:8px;font:400 14px/1.4 Inter,sans-serif}
+    textarea{min-height:96px}
+    .row{display:flex;gap:12px;align-items:center}
+    .btn{height:40px;padding:0 16px;border-radius:8px;border:none;background:var(--pink);color:#fff;font:600 14px/1.4 Inter,sans-serif;cursor:pointer}
+    .hint{font:400 12px/1.5 Inter,sans-serif;color:#666}
+  </style>
+</head>
+<body>
+  <div class="langFab" style="position:fixed;right:16px;top:12px;z-index:9999">
+    <button class="langBtn" id="langBtn" style="height:36px;padding:0 12px;border-radius:9999px;border:1px solid #ddd;background:#fff;cursor:pointer;font:600 14px/1.4 Inter">Languages</button>
+    <div class="langPanel" id="langPanel" style="display:none;position:absolute;right:0;top:42px;background:#fff;border:1px solid #eee;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.12);padding:8px"><div id="google_translate_element"></div></div>
+  </div>
+  <div class="wrap">
+    <h1>Order via prescription</h1>
+    <div class="card">
+      <form id="rxForm">
+        <div class="grid">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" placeholder="Patient name" required />
+          </div>
+          <div class="field">
+            <label for="age">Age</label>
+            <input id="age" name="age" type="number" min="0" placeholder="e.g. 35" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" placeholder="e.g. +91 9876543210" required />
+          </div>
+          <div class="field">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+          <div class="field" style="grid-column:1 / -1">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" placeholder="House/Flat, Street, Area, City, Pincode" required></textarea>
+          </div>
+          <div class="field" style="grid-column:1 / -1">
+            <label for="problem">Health problem</label>
+            <textarea id="problem" name="problem" placeholder="Describe symptoms or condition" required></textarea>
+          </div>
+          <div class="field" style="grid-column:1 / -1">
+            <label for="files">Upload prescription and files</label>
+            <input id="files" name="files" type="file" accept="image/*,.pdf" multiple required />
+            <div class="hint">Supported: images, PDF. You can upload multiple files.</div>
+          </div>
+        </div>
+        <div class="row" style="margin-top:16px;justify-content:flex-end">
+          <button class="btn" type="submit">Submit prescription</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    window.googleTranslateElementInit = function(){
+      new google.translate.TranslateElement({pageLanguage:'en'}, 'google_translate_element');
+    };
+    (function(){var s=document.createElement('script');s.src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';document.body.appendChild(s);}());
+    document.addEventListener('click', function(e){
+      const b=e.target.closest('#langBtn'); const p=document.getElementById('langPanel');
+      if(b){ e.preventDefault(); p&&p.classList.toggle('open'); p.style.display = p.style.display==='block'?'none':'block'; return; }
+      if(!e.target.closest('#langPanel')){ p&& (p.classList.remove('open'), p.style.display='none'); }
+    });
+    document.getElementById('rxForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const files = document.getElementById('files').files;
+      if(!files || files.length === 0){ alert('Please attach at least one file.'); return; }
+      const summary = `Name: ${fd.get('name')}\nAge: ${fd.get('age')}\nPhone: ${fd.get('phone')}\nGender: ${fd.get('gender')}\nAddress: ${fd.get('address')}\nProblem: ${fd.get('problem')}\nFiles: ${files.length}`;
+      alert('Prescription submitted.\n\n' + summary);
+      // TODO: POST to backend endpoint with FormData
+    });
+  </script>
+</body>
+</html>
+
+
+

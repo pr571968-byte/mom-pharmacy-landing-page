@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ask MOM - Contact us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --pink:#FA5899; --pink2:#FB6DA6; }
+    *{box-sizing:border-box} html,body{margin:0;padding:0;font-family:Inter,system-ui,sans-serif;color:#111}
+    .wrap{max-width:1000px;margin:32px auto;padding:0 16px}
+    .hero{border-radius:12px;border:1px solid #ffd3e5;background:linear-gradient(180deg,#fff,#ffe8f2);padding:20px}
+    h1{font:700 28px/1.3 Inter,sans-serif;color:var(--pink);margin:0 0 8px}
+    p.lead{font:400 16px/1.6 Inter,sans-serif;color:#444;margin:0 0 12px}
+    .form{margin-top:16px;border:1px solid #eee;border-radius:12px;padding:16px;background:#fff}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .field{display:flex;flex-direction:column;gap:6px}
+    label{font:600 13px/1.4 Inter,sans-serif;color:#333}
+    input,textarea{padding:10px 12px;border:1px solid #ddd;border-radius:8px;font:400 14px/1.4 Inter,sans-serif}
+    textarea{min-height:120px;resize:vertical}
+    .actions{margin-top:12px;display:flex;gap:12px;justify-content:flex-end}
+    .btn{height:42px;padding:0 18px;border-radius:8px;border:none;background:var(--pink);color:#fff;font:600 14px/1.4 Inter;cursor:pointer}
+    .btn--light{border:1px solid #ddd;background:#fff;color:#666}
+    .btn--light:hover{border-color:var(--pink);color:var(--pink)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Ask MOM</h1>
+      <p class="lead">We are here 24/7. Send us your query and we will help with clarity and mom‑like warmth.</p>
+    </div>
+    <form id="askForm" class="form">
+      <div class="row">
+        <div class="field"><label for="name">Your name</label><input id="name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" required></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" required></div>
+        <div class="field"><label for="subject">Subject</label><input id="subject" required></div>
+      </div>
+      <div class="field" style="margin-top:12px"><label for="message">Message</label><textarea id="message" required placeholder="Type your health question..."></textarea></div>
+      <div class="actions"><button type="button" class="btn btn--light" onclick="history.back()">Cancel</button><button type="submit" class="btn">Send</button></div>
+    </form>
+  </div>
+  <script>
+    document.getElementById('askForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thanks for contacting MOM! We\'ll reach out shortly.');
+      window.location.href = './index.html';
+    });
+  </script>
+</body>
+</html>
+
+
+

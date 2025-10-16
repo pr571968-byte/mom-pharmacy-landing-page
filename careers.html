@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers - MOM Pharmacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --pink:#FA5899; --teal:#00A79B; }
+    *{box-sizing:border-box} html,body{margin:0;padding:0;font-family:Inter,system-ui,sans-serif;color:#111}
+    .wrap{max-width:1000px;margin:32px auto;padding:0 16px}
+    h1{font:700 32px/1.25 Inter,sans-serif;color:var(--pink);margin:0 0 12px}
+    h2{font:700 22px/1.3 Inter,sans-serif;color:var(--pink);margin:20px 0 8px}
+    p,li,label{font:400 16px/1.7 Inter,sans-serif;color:#333}
+    .hero{border:1px solid #ffd3e5; background:linear-gradient(180deg,#fff,#ffe8f2); border-radius:12px; padding:16px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{border:1px solid #eee;border-radius:12px;padding:12px}
+    .badge{display:inline-block;background:var(--teal);color:#fff;border-radius:999px;padding:2px 10px;font:600 12px/1.6 Inter}
+    .apply{margin-top:16px;border:1px solid #eee;border-radius:12px;padding:12px}
+    input, textarea{width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px}
+    .btn{height:40px;padding:0 16px;border-radius:8px;border:none;background:var(--pink);color:#fff;font:600 14px/1.4 Inter,sans-serif;cursor:pointer}
+    .langFab{position:fixed;right:16px;top:12px;z-index:9999}
+    .langBtn{height:36px;padding:0 12px;border-radius:9999px;border:1px solid #ddd;background:#fff;cursor:pointer;font:600 14px/1.4 Inter}
+    .langPanel{display:none;position:absolute;right:0;top:42px;background:#fff;border:1px solid #eee;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.12);padding:8px}
+    .langPanel.open{display:block}
+  </style>
+</head>
+<body>
+  <div class="langFab">
+    <button class="langBtn" id="langBtn">Languages</button>
+    <div class="langPanel" id="langPanel"><div id="google_translate_element"></div></div>
+  </div>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Careers</h1>
+      <p>Join a mission-led team building the most caring pharmacy network.</p>
+      <span class="badge">We’re hiring</span>
+    </div>
+
+    <h2>Open roles</h2>
+    <div class="grid">
+      <div class="card"><strong>Heal Porter</strong><p>Frontline delivery with care and speed.</p></div>
+      <div class="card"><strong>Pharmacist</strong><p>Ensure quality and patient safety.</p></div>
+      <div class="card"><strong>Ops Associate</strong><p>Keep the network humming.</p></div>
+    </div>
+
+    <div class="apply">
+      <h2>Apply now</h2>
+      <form id="applyForm">
+        <label for="fullname">Full name</label>
+        <input id="fullname" required />
+        <label for="email">Email</label>
+        <input id="email" type="email" required />
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" placeholder="Tell us why you’re a fit"></textarea>
+        <div style="margin-top:10px;text-align:right">
+          <button class="btn" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    window.googleTranslateElementInit = function(){
+      new google.translate.TranslateElement({pageLanguage:'en'}, 'google_translate_element');
+    };
+    (function(){var s=document.createElement('script');s.src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';document.body.appendChild(s);}());
+    document.addEventListener('click', function(e){
+      const b=e.target.closest('#langBtn'); const p=document.getElementById('langPanel');
+      if(b){ e.preventDefault(); p&&p.classList.toggle('open'); return; }
+      if(!e.target.closest('#langPanel')){ p&&p.classList.remove('open'); }
+    });
+    document.getElementById('applyForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Application submitted. We will contact you soon.');
+    });
+  </script>
+</body>
+</html>
+
+
